@@ -2,15 +2,13 @@ import requests
 import json
 import hmac
 import hashlib
-from datetime import datetime
+from datetime import datetime, timezone
 
 payload ={
-    "timestamp": datetime.now().isoformat(timespec="milliseconds").replace("+00:00", "Z"),
+    "timestamp": datetime.now(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00", "Z"),
     "name": "Marta Sanchez Martin",
     "email": "martasanchez2628@gmail.com",
     "resume_link": "https://www.linkedin.com/in/marta-sanchez-m/",
-    # if you're watching this, here's my other repo -> https://github.com/MkS2244 
-    # this one contains one of my personal projects :)
     "repository_link": "https://github.com/mzsar/job-application",
     "action_run_link": "https://github.com/mzsar/job-application/actions/runs/24856851626"
 }
